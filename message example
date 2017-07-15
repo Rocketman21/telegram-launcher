@@ -1,0 +1,27 @@
+{
+  "ok":true,
+  "result":[{
+    "update_id":151670289,
+    "message":{
+      "message_id":4,
+      "from":{
+        "id":143497333,
+        "first_name":"Stanislav",
+        "username":"Rocketman21",
+        "language_code":"ru"
+      },
+      "chat":{
+        "id":143497333,
+        "first_name":"Stanislav",
+        "username":"Rocketman21",
+        "type":"private"
+      },
+      "date":1499358590,
+      "text":"/users",
+      "entities":[{
+        "type":"bot_command",
+        "offset":0,"length":6
+      }]
+    }
+  }]
+}

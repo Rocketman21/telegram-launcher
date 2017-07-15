@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Telegram Launcher</title>
+
+  <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+  <script
+    src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
+  <script src="semantic/dist/semantic.min.js"></script>
+</head>
+<body>
+  <div class="ui text container top-container">
+    <h2 class="ui center aligned icon header">
+      <i class="send outline icon"></i>
+      Telegram Launcher
+    </h2>
+
+    <div class="fluid small ui input">
+      <input id="input-pass" type="text" placeholder="Путь к программе">
+    </div>
+    <br />
+    <button id="btn-launch" class="fluid ui button">Launch</button>
+
+    <div id="tl-message" class="small ui icon message hidden">
+      <i class="mail icon"></i>
+      <div class="content">
+        <p>Программа запущена</p>
+      </div>
+    </div>
+  </div>
+</body>
+  <script>
+    require('./renderer.js')
+  </script>
+</html>

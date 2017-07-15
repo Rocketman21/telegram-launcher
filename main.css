@@ -1,0 +1,7 @@
+html, body {
+  background: rgb(237, 241, 242);
+  overflow: hidden;
+}
+.top-container {
+  margin-top: 20px;
+}

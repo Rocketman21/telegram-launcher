@@ -1,0 +1,22 @@
+{
+  "name": "telegram-launcher",
+  "productName": "Telegram Laucnher",
+  "version": "0.1.0",
+  "main": "main.js",
+  "dependencies": {
+    "semantic-ui": "^2.2.10"
+  },
+  "scripts": {
+    "start": "electron .",
+    "package": "electron-packager . --platform=win32,darwin --arch=x64 --ignore=node_modules --overwrite"
+  },
+  "semistandard": {
+    "globals": [
+      "$"
+    ]
+  },
+  "devDependencies": {
+    "electron": "^1.6.11",
+    "electron-packager": "^8.7.2"
+  }
+}
