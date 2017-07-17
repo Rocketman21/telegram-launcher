@@ -1,7 +1,7 @@
 const {ipcRenderer} = require('electron');
 
 $('#btn-launch').click(() => {
-  ipcRenderer.send('launch-app', $('#input-pass').val());
+  ipcRenderer.send('launch-app', $('#input-path').val());
   $('#tl-message').transition('browse', function () {
     setTimeout(() => { $(this).transition('browse'); }, 1000);
   });
