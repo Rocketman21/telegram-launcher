@@ -1,5 +1,4 @@
-const {app, BrowserWindow, ipcMain} = require('electron');
-const {exec} = require('child_process');
+const {app, BrowserWindow} = require('electron');
 const path = require('path');
 const url = require('url');
 
@@ -54,15 +53,3 @@ app.on('activate', () => {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
-
-// Получаем сообщение о запуске по ipc
-ipcMain.on('launch-app', (event, msg) => {
-  let command = '';
-
-  if (process.platform === 'darwin') {
-    command = 'open -a ';
-  }
-
-  exec(command + msg);
-  // console.log(command + msg);
-});

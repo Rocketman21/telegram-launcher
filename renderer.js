@@ -1,7 +1,7 @@
-const {ipcRenderer} = require('electron');
+const {exec} = require('child_process');
 
 $('#btn-launch').click(() => {
-  ipcRenderer.send('launch-app', $('#input-path').val());
+  launchApp($('#input-path').val());
   $('#tl-message').transition('browse', function () {
     setTimeout(() => { $(this).transition('browse'); }, 1000);
   });
@@ -23,7 +23,7 @@ class Telegram {
         msg.result.forEach((v) => {
           // обновляем offset
           this.prevOffset = v.update_id;
-          ipcRenderer.send('launch-app', v.message.text);
+          launchApp(v.message.text);
         });
       }
     });
@@ -32,3 +32,14 @@ class Telegram {
 
 const tlg = new Telegram('412774532:AAFvGG4nJlMTddR5-inhg3KEbhiB5vl3EPk');
 setInterval(() => { tlg.getUpdates(); }, 300);
+
+function launchApp(msg) {
+  let command = '';
+
+  if (process.platform === 'darwin') {
+    command = 'open -a ';
+  }
+
+  exec(command + msg);
+  // console.log(command + msg);
+}
